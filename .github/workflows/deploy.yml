@@ -45,19 +45,23 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Build static site
+      - name: Build static content
         run: |
+          echo "Current directory structure:"
+          ls -la
+          echo "Landing public content:"
+          ls -la landing/public/
+          
           mkdir -p ./_site
-          echo "Copying files from landing/public to _site..."
           cp -r landing/public/* ./_site/
           
-          echo "Final _site contents:"
+          echo "Site content after copy:"
           ls -la ./_site/
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './_site'
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                path: './_site'
 
   deploy:
     environment:
