@@ -15,8 +15,3 @@ vendor/
 dist/
 build/
 "@ | Set-Content .gitignore -Encoding UTF8
-
-# Aggiungi anche il nuovo .gitignore
-git add .gitignore
-git commit -m "Add clean .gitignore"
-git push
