@@ -1,0 +1,73 @@
+name: CI for ML Projects
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'projects/ml/**'
+      - '.github/workflows/ci.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'projects/ml/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10']
+        project: ['iris', 'make_friedman2']
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+        cache: 'pip'
+    
+    - name: Install dependencies for ${{ matrix.project }}
+      run: |
+        cd projects/ml/${{ matrix.project }}
+        pip install -r requirements.txt
+        pip install pytest pytest-cov
+    
+    - name: Run tests for ${{ matrix.project }}
+      run: |
+        cd projects/ml/${{ matrix.project }}
+        python -m pytest tests/ -v --cov=src --cov-report=xml
+    
+    - name: Upload coverage reports
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./projects/ml/${{ matrix.project }}/coverage.xml
+        flags: ${{ matrix.project }}
+    
+    - name: Check code quality
+      run: |
+        cd projects/ml/${{ matrix.project }}
+        pip install black flake8
+        python -m black --check src/ tests/
+        python -m flake8 src/ tests/ --max-line-length=88
+    
+  notebook-check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        cache: 'pip'
+    
+    - name: Install nbconvert
+      run: pip install nbconvert
+    
+    - name: Check Jupyter notebooks
+      run: |
+        find projects/ml/ -name "*.ipynb" -exec python -m nbconvert --to notebook --execute {} \;

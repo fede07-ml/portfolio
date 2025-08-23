@@ -1,88 +1,22 @@
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-VENV/
-env.bak/
-venv.bak/
-
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# Jupyter Notebook
-.ipynb_checkpoints/
-*.ipynb_checkpoints/
-
-# Data Science - Dati e Modelli
-**/data/raw/           # Dati grezzi non processati
-**/data/processed/     # Dati processati (se pesanti)
-*.csv
-*.json
-*.xml
-*.yaml
-*.yml
-*.db
-*.sqlite3
-*.parquet
-*.feather
-
-# Machine Learning Models
-**/models/            # Tutti i modelli serializzati
-*.pkl
-*.pickle
-*.h5
-*.hdf5
-*.model
-*.joblib
-*.pth
-*.pt
-
-# Logs e output
-logs/
-*.log
-mlruns/              # MLflow
-mlflow/
-
-# OS
+@"
+# File di sistema
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
 
-# Dataset specifici per progetti
-**/iris/data/        # Dataset Iris
-**/make_friedman2/data/  # Dataset Friedman2
+# File di ambiente
+.env
+.env.local
+
+# Cartelle di dipendenze
+node_modules/
+vendor/
+
+# File di build/dist
+dist/
+build/
+"@ | Set-Content .gitignore -Encoding UTF8
+
+# Aggiungi anche il nuovo .gitignore
+git add .gitignore
+git commit -m "Add clean .gitignore"
+git push
