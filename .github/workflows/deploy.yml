@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Landing Page
 
 on:
   push:
@@ -20,12 +20,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
-      - name: Build static content
+      - name: Upload landing page
         run: |
-          # Se la tua landing page ha bisogno di build steps, aggiungili qui
-          # Altrimenti, copia semplicemente i file
+          # Copia il contenuto della landing page nella cartella di build
           mkdir -p ./_site
-          cp -r ./landing/* ./_site/
+          cp -r ./landing/public/* ./_site/
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -37,5 +36,4 @@ jobs:
     needs: build
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
