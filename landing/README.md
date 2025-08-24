@@ -3,7 +3,7 @@
 
 A modern, responsive personal portfolio website showcasing my machine learning and AI projects.
 
-![Portfolio Screenshot](assets/images/portfolio-screenshot.png)
+![Portfolio Screenshot](immagine_profilo_landing_page_github.jpg)
 
 ## 🚀 Features
 
