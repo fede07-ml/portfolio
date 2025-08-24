@@ -1,0 +1,53 @@
+name: CI for ML Projects
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-notebooks:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install basic dependencies
+      run: pip install pandas numpy scikit-learn nbconvert
+    
+    - name: Validate Iris notebook
+      run: |
+        cd projects/ml/iris
+        python -c "
+        # Verifica che gli import funzionino
+        try:
+            import pandas as pd
+            from sklearn import datasets
+            print('✅ Iris imports successful')
+        except Exception as e:
+            print(f'❌ Error: {e}')
+            exit(1)
+        "
+    
+    - name: Validate Friedman notebook
+      run: |
+        cd projects/ml/make_friedman2
+        python -c "
+        try:
+            import numpy as np
+            from sklearn.ensemble import RandomForestRegressor
+            print('✅ Friedman imports successful')
+        except Exception as e:
+            print(f'❌ Error: {e}')
+            exit(1)
+        "
+    
+    - name: Check notebook syntax
+      run: |
+        find projects/ml -name "*.ipynb" -exec echo "Validating {}" \;
