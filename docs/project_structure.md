@@ -81,12 +81,3 @@ web_project/
 ---
 
 **Remember**: This structure is a starting point - adapt it to make your projects work better for you! 🎯
-
-## 🚀 **COME USARE:**
-1. **APRI** `docs/project_structure.md`
-2. **ELIMINA** tutto il contenuto esistente
-3. **COPIA** tutto il testo qui sopra
-4. **INCOLLA** nel file
-5. **SALVA**
-
-**Prossimo file:** `landing/public/index.html` - Incolla il contenuto che hai già!

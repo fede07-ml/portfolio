@@ -7,7 +7,6 @@ This is my personal reference for how I like to organize my projects.
 1. **Code should be readable** - I should understand it later
 2. **Document what's important** - Especially why I made choices
 3. **Keep learning** - Try new approaches in different projects
-4. **Have fun** - Enjoy the process of creating
 
 ## 📁 How I Organize Projects
 

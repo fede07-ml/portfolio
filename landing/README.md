@@ -1,7 +1,3 @@
-# README.md per la Tua Landing Page
-
-Ecco un README completo e professionale per la tua cartella `landing/`:
-
 ```markdown
 # Federico's Portfolio Landing Page
 
@@ -143,22 +139,3 @@ Project Link: [https://github.com/fede07-ml/portfolio](https://github.com/fede07
 
 ⭐ Star this repo if you found it helpful!
 ```
-
-## 📋 Come utilizzare questo README:
-
-1. **Crea il file** nella cartella `landing/`:
-   ```powershell
-   cd landing
-   New-Item README.md
-   ```
-
-2. **Copia e incolla** il contenuto sopra nel file
-
-3. **Personalizza** le sezioni con le tue informazioni specifiche
-
-4. **Aggiungi e commit**:
-   ```powershell
-   git add landing/README.md
-   git commit -m "Add landing page documentation"
-   git push origin main
-   ```
