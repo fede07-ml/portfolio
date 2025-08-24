@@ -1,9 +1,6 @@
-```markdown
 # Federico's Portfolio Landing Page
 
 A modern, responsive personal portfolio website showcasing my machine learning and AI projects.
-
-![Portfolio Screenshot](immagine_profilo_landing_page_github.jpg)
 
 ## 🚀 Features
 
@@ -138,4 +135,3 @@ Project Link: [https://github.com/fede07-ml/portfolio](https://github.com/fede07
 ---
 
 ⭐ Star this repo if you found it helpful!
-```
