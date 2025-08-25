@@ -1,39 +1,59 @@
-# 📓 My Coding Notes & Guidelines
+# Coding Standards
 
-This is my personal reference for how I like to organize my projects.
+## Python Code Style
+- Follow PEP 8 guidelines for code formatting
+- Use descriptive variable and function names
+- Include docstrings for all functions and classes
+- Use type hints where appropriate
+- Maximum line length: 88 characters
 
-## 🎯 My Basic Principles
+## Notebook Standards
+- Use markdown cells for clear explanations
+- Keep code cells focused and concise
+- Include clear section headings
+- Ensure output is visible for key results
+- Remove unnecessary output before committing
 
-1. **Code should be readable** - I should understand it later
-2. **Document what's important** - Especially why I made choices
-3. **Keep learning** - Try new approaches in different projects
+## File Naming Conventions
+- Use snake_case for Python files (e.g., `data_processing.py`)
+- Use descriptive names that indicate purpose
+- Avoid spaces and special characters in file names
+- Use uppercase for class names (PascalCase)
+- Use lowercase with underscores for variables and functions
 
-## 📁 How I Organize Projects
+## Documentation Requirements
+- Every project must include a comprehensive README.md
+- Include setup and installation instructions
+- Document key findings and results
+- Provide examples of how to use the code
+- Include citations for external data or code
 
-Each project can have its own style, but I generally include:
-- A `notebooks/` folder for exploration
-- A `src/` or `code/` folder for final code
-- A `data/` folder (with raw/processed subfolders)
-- A `README.md` explaining what the project does
+## Project Structure Standards
+- Use the simplified structure for educational projects
+- Keep supporting files in appropriate directories
+- Maintain consistent naming across projects
+- Separate raw data from processed data when applicable
 
-## 🐍 Python Preferences
+## Version Control Practices
+- Commit related changes together
+- Write clear, descriptive commit messages
+- Use .gitignore to exclude unnecessary files
+- Regularly sync with remote repository
 
-- I use **meaningful names** for variables and functions
-- I add **comments** when I do something clever or complex
-- I **experiment freely** but keep the final code clean
+## Testing Standards
+- Include basic validation in notebooks
+- Test data loading and preprocessing steps
+- Verify model training and evaluation workflows
+- Document expected outputs and results
 
-## 🔧 My Minimum Requirements
+## Visualization Standards
+- Use consistent color schemes and styles
+- Include appropriate labels and titles
+- Ensure visualizations are reproducible
+- Save high-quality versions for documentation
 
-- The project should **run without errors**
-- I should remember **how to use it** later
-- I should know **what it accomplishes**
-
-## 📚 Learning & Experimentation
-
-- I try **new libraries** in different projects
-- I document **what worked and what didn't**
-- I **copy good ideas** from previous projects
-
----
-
-*This document evolves as I learn and grow as a developer!* 🚀
+## Dependency Management
+- Include requirements.txt for all projects
+- Pin major versions for reproducibility
+- Document any special installation requirements
+- Use virtual environments for local development
