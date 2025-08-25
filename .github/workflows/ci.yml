@@ -37,7 +37,7 @@ jobs:
     
     - name: Validate Friedman notebook
       run: |
-        cd projects/ml/make_friedman2
+        cd projects/ml/friedman
         python -c "
         try:
             import numpy as np
