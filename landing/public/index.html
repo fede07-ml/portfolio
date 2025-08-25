@@ -140,30 +140,27 @@
             color: var(--secondary);
         }
         
-        /* Hero Section */
+        /* Hero Section - MODIFICATA */
         .hero {
             padding: 180px 0 100px;
             background: linear-gradient(135deg, #f5f7ff 0%, #e3ebff 100%);
             position: relative;
             overflow: hidden;
+            text-align: center; /* Aggiunto per centrare il testo */
         }
         
         .hero-content {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column; /* Cambiato da row a column */
+            align-items: center; /* Centra orizzontalmente */
+            justify-content: center; /* Centra verticalmente */
             gap: 40px;
         }
         
         .hero-text {
             flex: 1;
             animation: fadeInUp 0.8s ease-out;
-        }
-        
-        .hero-image {
-            flex: 1;
-            text-align: center;
-            animation: fadeInRight 0.8s ease-out;
+            max-width: 800px; /* Limita la larghezza per leggibilità */
         }
         
         .hero h1 {
@@ -174,7 +171,7 @@
         
         .hero p {
             font-size: 1.2rem;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto 30px;
             color: var(--text-light);
         }
@@ -220,20 +217,6 @@
         .btn-outline:hover {
             background: var(--primary);
             color: var(--white);
-        }
-        
-        .hero-illustration {
-            width: 100%;
-            max-width: 450px;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: var(--card-shadow);
-            transform: perspective(800px) rotateY(-10deg);
-            transition: var(--transition);
-        }
-        
-        .hero-illustration:hover {
-            transform: perspective(800px) rotateY(0);
         }
         
         /* About Section */
@@ -590,21 +573,6 @@
         
         /* Responsive Design */
         @media (max-width: 992px) {
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .hero-text, .hero-image {
-                flex: none;
-                width: 100%;
-            }
-            
-            .hero-image {
-                order: -1;
-                margin-bottom: 40px;
-            }
-            
             .hero h1 {
                 font-size: 2.8rem;
             }
@@ -682,7 +650,6 @@
             .hero h1 {
                 font-size: 1.8rem;
             }
-            
             .hero p {
                 font-size: 1rem;
             }
@@ -722,7 +689,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - MODIFICATA -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
@@ -734,9 +701,6 @@
                         <a href="#projects" class="btn">View My Projects</a>
                         <a href="#contact" class="btn btn-outline">Get In Touch</a>
                     </div>
-                </div>
-                <div class="hero-image">
-                    <img src="assets/images/immagine_profilo_landing_page_github.jpg" alt="Federico - AI and Machine Learning Student" class="hero-illustration">
                 </div>
             </div>
         </div>
@@ -928,7 +892,7 @@
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                menuToggle.innerHTML = '<class="fas fa-bars"></i>';
             });
         });
         
