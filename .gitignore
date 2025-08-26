@@ -1,17 +1,49 @@
-@"
-# File di sistema
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# OS files
 .DS_Store
 Thumbs.db
+Desktop.ini
 
-# File di ambiente
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.python-version
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables
 .env
 .env.local
+.env.production
 
-# Cartelle di dipendenze
-node_modules/
-vendor/
+# Logs
+*.log
+logs/
 
-# File di build/dist
+# Data files
+*.csv
+*.data
+*.feather
+*.parquet
+*.db
+*.sqlite
+*.sqlite3
+
+# Build outputs
 dist/
 build/
-"@ | Set-Content .gitignore -Encoding UTF8
+*.egg-info/
